@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="sketch.js"></script>
+		<link rel="shortcut icon" href="favicon.png" />
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body onload="Start()">
+		<div id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="title">
+						<h1> <img src ="Source/plant.png"> Our Garden on the Back Porch</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p id="datecon" ></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Blog part of website -->
+		<div id="blog">
+			<div class="container">
+			<!-- Article-->
+			<article>
+				<div class="panel panel-default" onclick ="updateArticle()">
+						<div class="panel-heading" >
+							<div class="row">
+								<div class="col-md-8">
+									<h3 class="panel-title" id = "ftitle"></h3>
+								</div>
+								<div class="col-md-4">
+									<h3 class="panel-title" id = "fdate"></h3>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-8">
+									<p id = "fentry"></p>
+								</div>
+								<div class="col-md-4">
+									<img class =".img-thumbnail" id ="fsrc" src="" >
+								</div>
+							</div>
+						</div>
+					</div>
+			</article>
+			<!-- Article-->
+			</div>
+		</div>
+		<!-- info -->	
+		<div id = "info">
+			<div class="container">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="panel-title">About:</h3>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<p>This website chronicles mine and my wonderful fiance's experience with our garden that we started on our back porch.</p>
+								<p>Click on the articles above to scroll through them and learn about everything we have expereinced and learned so far </p>
+								<p>Or click below and look through our Gallery of images!</p>
+								<p>This Webiste is optimized for mobile devices! No keyboards needed!</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!-- Gallery us -->	
+		<div id ="gallery">
+			<div class="container">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="panel-title">Gallery</h3>
+							</div>
+						</div>
+					</div>	
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<img src="#" class="img-responsive" id= "Gsrc" onclick="changePic()"/>
+							<p id="pnum1">#</p><p>/</p><p id="pnum2">#</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+			</div>	
+		</div>
+	<!-- Email info -->	
+		<div id ="mail">
+			<div class="container">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="panel-title">Contact:</h3>
+							</div>
+						</div>
+					</div>	
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<p>The easiest way to contact me is through email: Stevedixon1128.dev@gmail.com</p>
+							<p>We do have a facebook page however that is a bad way to contact us</p>
+							<p>Please if you want to ask questions about the garden or questions about the website feel free to ask!</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>	
+		</div>
+	<!-- Contact us toolbar-->
+	</body>
+	<footer>
+		<div id="foot">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="fcenter">
+					<p>Hosted on a: <img src="Source/pilogo.png"/></p>
+					<p>Written and Edited by Steven Dixon.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</footer>
+</html>
