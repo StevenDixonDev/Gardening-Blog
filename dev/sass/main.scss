@@ -1,9 +1,101 @@
 $blue-lagoon: #B5E2FA;
 $white-smoke: #F9F7F3;
-$mountain-meadow: #35CE8D;
+$mountain: #35CE8D;
 $pale-gold: #EDDEA4;
 $light-salmon: #F7A072;
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $white-smoke;
+}
+
 h1 {
     color: $white-smoke;
+    font-family: 'PT Sans Narrow';
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 5px;
+    margin-bottom: 48px;
+}
+
+p {
+    color: #516163;
+    font-family: 'PT Sans';
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 36px;
+    margin-bottom: 36px;
+}
+
+a {
+    color: $mountain;
+    &:hover {
+        color: #323B3C;
+    }
+}
+
+header {
+    background-color: $mountain;
+    margin: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    #title {
+        margin: 0;
+        padding-bottom: 0;
+        text-transform: uppercase;
+    }
+    h3 { 
+        margin: 0;
+        text-transform: uppercase;
+    }
+    &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2em;
+        background-color: #323B3C;
+        position: relative;
+        bottom: -4em;
+        left: 0;
+        transform-origin: center;
+        animation: 1s grow forwards;
+    }
+}
+
+.current-description{
+    width: 80%;
+    margin: auto;
+    margin-top: 10em;
+    
+    padding: .5em;
+    background-color: $blue-lagoon;
+    h2{
+        font-size: 30px;
+        color: $white-smoke;
+        line-height: 50px;
+        text-transform: uppercase;
+        padding-left: 1em;
+    }
+}
+
+.body{
+    background-color: rgb(112, 112, 112);
+}
+
+#app{
+    margin: auto;
+    width: 80%;
+}
+
+@keyframes grow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
 }

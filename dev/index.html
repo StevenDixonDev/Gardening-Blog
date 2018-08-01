@@ -1,22 +1,45 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="shortcut icon" href="favicon.png" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--[htmlclean-protect]-->
-		<!-- inject:css -->
-		<!-- endinject -->
-		<!--[/htmlclean-protect]-->
-	</head>
 
-	<body>
-		<h1>I am a test</h1>
+<head>
+	<link rel="shortcut icon" href="favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,900' rel='stylesheet' type='text/css'>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--[htmlclean-protect]-->
+	<!-- inject:css -->
+	<!-- endinject -->
+	<!--[/htmlclean-protect]-->
+</head>
+
+<body>
+	<header>
+		<h1 id="title">Back Porch Gardening</h1>
+		<h3>A Gardening Blog</h3>
+	</header>
+	<main>
+		<div class="current-description">
+			<h2>Blog</h2>
+		</div>
+		<div id="app">
+			<static-posts />
+		</div>
+		<template id="static-posts-template">
+			<div>
+				<h1>Here are the post titles:</h1>
+				<ul>
+					<div v-for="post in posts">
+						{{post.title}}
+					</div>
+				</ul>
+			</div>
+		</template>
+	</main>
 	<!--[htmlclean-protect]-->
 	<!-- inject:js -->
 	<!-- endinject -->
 	<!--[/htmlclean-protect]-->
-	</body>
+</body>
+
 </html>
