@@ -30,7 +30,7 @@ gulp.task('images', function () {
         .pipe(gulp.dest('temp/images'))
 });
 
-gulp.task('json', function(){
+gulp.task('json', function () {
     return gulp.src("dev/**/*.json").pipe(gulp.dest("temp"));
 })
 
@@ -78,27 +78,28 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch('dev/**', ['inject']);
 });
 
-gulp.task('html:dist', function(){
+gulp.task('html:dist', function () {
     return gulp.src("dev/index.html")
-    .pipe(htmlclean())
-    .pipe(gulp.dest("docs"));
+        .pipe(htmlclean())
+        .pipe(gulp.dest("docs"));
 })
 
-gulp.task('css:dist', function(){
+gulp.task('css:dist', function () {
     return gulp.src("dev/**/*.css")
-    .pipe(concat('style.min.css'))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest("docs/styles"));
+        .pipe(concat('style.min.css'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest("docs/styles"));
 })
 
-gulp.task('js:dist', function(){
-    gulp.task('js:dist', function () {
-        return gulp.src("dev/**/*.js")
-          .pipe(concat('script.min.js'))
-          .pipe(uglify())
-          .pipe(gulp.dest("docs/scripts"));
-      });
-})
+
+gulp.task('js:dist', function () {
+    return gulp.src('dev/**/*.js')
+        .pipe(concat('script.min.js'))
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest('docs/scripts'))
+});
 
 gulp.task('images:dist', function () {
     return gulp.src('dev/**/*.+(png|jpg|gif|svg)')
@@ -106,7 +107,7 @@ gulp.task('images:dist', function () {
         .pipe(gulp.dest("docs"))
 });
 
-gulp.task('json:dist', function(){
+gulp.task('json:dist', function () {
     return gulp.src("dev/**/*.json").pipe(gulp.dest("docs"));
 })
 
@@ -117,13 +118,17 @@ gulp.task('inject:dist', ['copy:dist'], function () {
     var css = gulp.src("docs/**/*.css");
     var js = gulp.src("docs/**/*.js");
     return gulp.src("docs/index.html")
-      .pipe(inject( css, { relative:true } ))
-      .pipe(inject( js, { relative:true } ))
-      .pipe(gulp.dest("docs"));
-  });
+        .pipe(inject(css, {
+            relative: true
+        }))
+        .pipe(inject(js, {
+            relative: true
+        }))
+        .pipe(gulp.dest("docs"));
+});
 
-  gulp.task('build', ['inject:dist']);
+gulp.task('build', ['inject:dist']);
 
-  gulp.task('clean', function () {
+gulp.task('clean', function () {
     del(['temp', 'docs']);
-  });
+});
