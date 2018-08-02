@@ -1,6 +1,7 @@
 dev
 temp
 .babelrc
-gulpfile.js
+/gulpfile.js
 /package-lock.json
 node_modules
+/package.json
