@@ -8,6 +8,7 @@ const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const babel = require('gulp-babel');
 
 gulp.task('default', function () {
     // place code for your default task here
@@ -42,7 +43,11 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src("dev/**/*.js").pipe(gulp.dest("temp"));
+    return gulp.src('dev/**/*.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest('temp'))
 });
 
 gulp.task('copy', ['sass', 'css', 'js', 'html', 'images', 'json']);
