@@ -2,11 +2,11 @@
 <html>
 
 <head>
-	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="shortcut icon" href="images/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,900' rel='stylesheet' type='text/css'>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 	<!--[htmlclean-protect]-->
 	<!-- inject:css -->
 	<!-- endinject -->
@@ -23,19 +23,44 @@
 			<h2>Blog</h2>
 		</div>
 		<div id="app">
-			<static-posts />
+			<router-view />
 		</div>
-		<template id="static-posts-template">
-			<div>
-				<h1>Here are the post titles:</h1>
-				<ul>
-					<div v-for="post in posts">
-						{{post.title}}
-					</div>
-				</ul>
-			</div>
-		</template>
 	</main>
+	<template id="list-template">
+		<div class="wrap">
+			<article class='entry' v-for="post in posts">
+				<router-link :to="{ name: 'post', params: { id: post.Id }}">
+					<h2>{{post.Title}}</h2> 
+					<hr />
+				</router-link>
+				<p>{{post.Brief}}</p>
+				<div class="date">
+					<p >Posted on {{post.Date}}</p>
+				</div>
+			</article>
+		</div>
+		<!--
+		<ul>
+			<li v-for="post in posts">
+				<router-link :to="{ name: 'post', params: { id: post.id }}">
+					{{post.title}}
+					{{post.Date}}
+				</router-link>
+			</li>
+		</ul>
+	-->
+	</template>
+	<template id="post-template">
+		<div class="article">
+			<router-link :to="{ name: 'homepage' }">Homepage</router-link>
+			<h2>{{post.Title}}</h2>
+			<hr />
+			<p>{{post.Article}}</p>
+			<img class="responsive" v-bind:src="post.Image"></img>
+		</div>
+	</template>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js'></script>
 	<!--[htmlclean-protect]-->
 	<!-- inject:js -->
 	<!-- endinject -->
