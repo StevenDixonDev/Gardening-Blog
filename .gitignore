@@ -1,5 +1,6 @@
-docs
+dev
 temp
-dev/css
+.babelrc
+gulpfile.js
 /package-lock.json
 node_modules

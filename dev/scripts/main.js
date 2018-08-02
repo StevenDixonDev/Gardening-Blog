@@ -1,6 +1,6 @@
 (function(){
 
-    fetch('./posts/posts.json').then(res => res.json())
+    fetch('../posts/posts.json').then(res => res.json())
     .then(data => console.log(data));
     const List = {
         template: '#list-template',
