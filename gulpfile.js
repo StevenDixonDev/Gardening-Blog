@@ -132,3 +132,11 @@ gulp.task('build', ['inject:dist']);
 gulp.task('clean', function () {
     del(['temp', 'docs']);
 });
+
+gulp.task('serve:build', function () {
+    return gulp.src('docs')
+        .pipe(webserver({
+            port: 3000,
+            livereload: true
+        }));
+});
