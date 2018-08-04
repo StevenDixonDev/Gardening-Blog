@@ -9,6 +9,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: $white-smoke;
+    background: url(../images/background.svg);
+    background-size: cover;
 }
 
 h1 {
@@ -91,7 +93,7 @@ main{
     margin: 0;
     width: 80%;
     margin: auto;
-    background-color: rgb(233, 233, 233);
+    background-color: rgba(233, 233, 233, .5);
 }
 
 .wrap{
